@@ -31,11 +31,12 @@ configuration files to object serialization and persistance.
 CFLAGS="%{optflags}" python setup.py build
 find examples -type f | xargs chmod -x # Fix example permissions
 
-%install
-python setup.py install --prefix=%{_prefix} --root=%{buildroot}
-
 %check
 python setup.py test
+
+
+%install
+python setup.py install --prefix=%{_prefix} --root=%{buildroot}
 
 %files
 %defattr(-,root,root,-)
